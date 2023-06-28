@@ -1,0 +1,37 @@
+{
+	"Resources": {
+		"RaviCFVPC" : {
+		   "Type" : "AWS::EC2::VPC",
+		   "Properties" : {
+		      "CidrBlock" : "10.0.0.0/16",
+		      "Tags" : [ 
+		         {"Key" : "Name", "Value" : "RaviVPCCF"} 
+		      ]
+		   }
+		},
+		"CFSubnet1" : {
+		   "Type" : "AWS::EC2::Subnet",
+		   "Properties" : {
+		      "VpcId" : { "Ref" : "RaviCFVPC" },
+		      "CidrBlock" : "10.0.0.0/24",
+		      "AvailabilityZone" : "eu-central-1a",
+		      "Tags" : [ { "Key" : "Name", "Value" : "CFSubnet1" } ]
+   }
+},
+			"CFSubnet2" : {
+			   "Type" : "AWS::EC2::Subnet",
+			   "Properties" : {
+			      "VpcId" : { "Ref" : "RaviCFVPC" },
+			      "CidrBlock" : "10.0.1.0/24",
+			      "AvailabilityZone" : "eu-central-1b",
+			      "Tags" : [ { "Key" : "Name", "Value" : "production" } ]
+			   }
+			},
+			"InternetGatewayCF" : {
+		      "Type" : "AWS::EC2::InternetGateway",
+		      "Properties" : {
+		        "Tags" : [ {"Key" : "Name", "Value" : "IGWCF"}]
+		      }
+		   }
+	}
+}

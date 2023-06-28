@@ -1,0 +1,17 @@
+{
+	"Resources": {
+			"MyEC2Instance" : {
+				   "Type" : "AWS::EC2::Instance",
+				   "Properties" : {
+				      "ImageId" : "ami-0b1e9479e618295b2",
+				      "KeyName" : "Lambdakey",
+				      "InstanceType" : "t2.micro",
+				      "SecurityGroupIds" : ["sg-06dfe8b6221c6dd6c"],
+				      "SubnetId" : "subnet-0a46ec8ec81eee8a9",
+				      "Tags" : [ 
+		         {"Key" : "Name", "Value" : "EC2InstanceCF"} 
+		      ]
+				   }
+				}
+	}
+}
